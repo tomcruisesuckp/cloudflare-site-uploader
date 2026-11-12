@@ -1,0 +1,15 @@
+{
+  "name": "cloudflare-site-uploader",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Upload a website and generate ten independent Cloudflare Pages deployment folders.",
+  "scripts": { "start": "node server.js", "dev": "node --watch server.js" },
+  "engines": { "node": ">=20" },
+  "dependencies": {
+    "adm-zip": "^0.5.16",
+    "archiver": "^7.0.1",
+    "express": "^4.21.2",
+    "helmet": "^8.0.0",
+    "multer": "^1.4.5-lts.1"
+  }
+}
