@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#101827">
+  <title>Cloudflare Site Uploader</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="top">
+      <div class="logo">CF</div>
+      <div><p class="eyebrow">DEPLOYMENT TOOLKIT</p><h1>Cloudflare Site Uploader</h1></div>
+      <span class="status"><i></i> Ready</span>
+    </header>
+
+    <section class="intro">
+      <p class="eyebrow">HTML → DEPLOYABLE WEBSITE PACKAGES</p>
+      <h2>One upload. Ten ready-to-deploy folders.</h2>
+      <p>Upload your website source and generate ten independent copies, each ready for Cloudflare Pages.</p>
+    </section>
+
+    <section class="panel">
+      <form id="uploadForm">
+        <label class="dropzone" id="dropzone" for="website">
+          <span class="uploadIcon">↑</span>
+          <strong>Drop your website file here</strong>
+          <span class="muted">or click to browse your computer</span>
+          <span class="fileTypes">HTML, HTM or ZIP · Maximum upload 50 MB</span>
+          <input id="website" name="website" type="file" accept=".html,.htm,.zip, text/html, application/zip" required>
+        </label>
+        <div class="selected" id="selected" hidden></div>
+        <div class="notice"><strong>Recommended:</strong> Upload a ZIP of your complete website. A single index.html file cannot bring along separate CSS, JavaScript, images or fonts.</div>
+        <button id="submit" type="submit">Generate A1–A10 folders <span>→</span></button>
+      </form>
+      <div class="progress" id="progress" hidden><div></div></div>
+      <p class="message" id="message" role="status" aria-live="polite"></p>
+    </section>
+
+    <section class="folderSection">
+      <div class="sectionHead"><div><p class="eyebrow">OUTPUT STRUCTURE</p><h3>10 independent deployment folders</h3></div><span class="count">10 FOLDERS</span></div>
+      <div class="folders" id="folders"></div>
+      <p class="muted small">Every folder contains a complete copy of the site and its local assets. You only need to deploy one folder unless you want multiple separate deployments.</p>
+    </section>
+
+    <footer>Files are processed temporarily on this server and removed after the ZIP is prepared. Do not upload confidential files.</footer>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>
